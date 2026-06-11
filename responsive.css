@@ -1,0 +1,8 @@
+@media only screen and (min-width: 992px) {
+    .img_in_for_picture{
+        width: 100%;
+    }
+    .navbar{
+        width: 100%;
+    }
+}

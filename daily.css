@@ -1,0 +1,198 @@
+.text_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top:10px;
+}
+#daily-words{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;    
+}
+.put_information{
+    display: flex;
+    justify-content: baseline;
+    align-items:baseline;
+
+}
+.box_element1{
+    border:1px solid none;
+    border-radius:0px;
+    width:20%;
+    height:auto;
+    position: sticky;
+    top: 0px;
+    display:block;
+}
+.box_element2{
+    border:1px solid black;
+    border-radius:0px;
+    width:80%;
+    height: auto;
+}
+.list{
+    display:block;
+    margin-left:8%;
+}
+.active1:hover{
+    color:white;
+    cursor:pointer;
+    transform: scale(1.05);
+    transition:all 0.3s ease;
+    border:1px solid blue;
+    border-radius:10px;
+    width:80%;
+    padding:10px;
+    background-image: linear-gradient(135deg , rgb(18, 90, 184) 20% , rgb(100, 136, 255) 90%);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    #icon{
+        display:inline-block;
+        margin-left: 40%;
+    }
+}
+.active1{
+    display:block;
+    margin-top:20px;
+    border:1px solid blue;
+    border-radius:10px;
+    width:80%;
+    padding:10px;
+    background-image: linear-gradient(135deg , rgb(18, 90, 184) 20% , rgb(100, 136, 255) 90%);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+#icon{
+    display:inline-block;
+}
+.text_desciption{
+    display: block;
+    margin-left: 3%;
+}
+.box_description{
+    display: block;
+    margin-left: 3%;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-image: linear-gradient(136deg , white 20% , rgb(209, 209, 209) 90%);
+}
+.Greetings{
+    font-size:20px;
+    border: 1px solid none;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    padding: 5px;
+    background-image: linear-gradient(136deg , rgba(0, 128, 0, 0.76) 10% , rgba(255, 145, 0, 0.747) 50% , rgba(255, 255, 0, 0.842) 100%);
+}
+.text_in_box{
+    padding: 25px;
+}
+
+
+/* .put_element{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+} */
+.conversation_img{
+    border: 1px solid none;
+    border-radius: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top:10px;
+}
+.for_picture{
+    border: 1px solid none;
+    border-radius: 10px;
+    width: 50%;
+}
+._img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 2px gray;
+}
+.for_descitption{
+    border: 1px solid none;
+    border-radius: 10px;
+    width: 40%;
+}
+li{
+    list-style-type: none;
+}
+ul{
+    font-family: "Noto Sans Khmer", sans-serif;
+    font-size: 20px;
+    gap: 10%;
+}
+.nav_design{
+    display: block;
+    margin-top: 10px;
+    border: 1px solid none;
+    border-radius: 10px;
+    background-color: steelblue;
+    padding: 5px;
+    color: white;
+}
+.general{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    color: white;
+}
+.img_general_conversation{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+/* conversation  place */
+.conversation_place{
+    display: block;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 10px;
+}
+.backgournd{
+    background-image: linear-gradient(135deg , rgba(0, 0, 82, 0.952) 30% , rgba(0, 0, 0, 0.89) 100%);
+
+}
+.for_person1_{
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 50px;
+    background-color: aliceblue;
+}
+.for_person1{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: auto;
+    gap: 10px;
+}
+#open_chat{
+    display: none;
+}
+.grid{
+    display:grid;
+    grid-template-columns: repeat(2 ,1fr);
+}
