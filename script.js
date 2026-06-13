@@ -172,57 +172,83 @@ sentace_conver.forEach(conversation =>{
     `
     speaking.appendChild(conver);
 })
+
 const chat_ai = [
-    {
-        ai : "Yes Hello , hi",
-        you : "hello"
-    }
-]
-chat_ai.forEach(chatAI =>{
-    const bot_chat = document.createElement("div");
-
-    bot_chat.innerHTML = `
-        <div>
-            <p>${chatAI.you}</p>
-            <p>${chatAI.ai}</p>
-        </div>
-    `
-    //
-})
-
+    { you: "Hello! How are you doing today?", ai: "Hi there! I'm doing great, thank you." },
+    { you: "What's the weather like outside?", ai: "It looks quite warm and sunny today. Perfect for going out!" },
+    { you: "I'm so tired today. I didn't sleep well last night.", ai: "Oh dear, I'm sorry to hear that. Maybe a warm cup of coffee can help?" },
+    { you: "Can you recommend a good place to eat lunch around here?", ai: "Sure! There's a great local cafe nearby that serves amazing noodle soup." },
+    { you: "What are your plans for the weekend?", ai: "I don't have plans since I'm an AI, but it's a great time for you to relax!" },
+    { you: "I have a lot of work to do and I'm feeling stressed.", ai: "Take a deep breath. Try breaking your tasks into smaller steps." },
+    { you: "Do you know what time the supermarket closes?", ai: "Most local supermarkets close around 9:00 PM or 10:00 PM." },
+    { you: "I think I'm getting a cold. My throat hurts.", ai: "Oh no! Make sure to drink plenty of warm water and get some rest." },
+    { you: "Can you help me remind myself to buy groceries later?", ai: "Consider it noted! Don't forget to grab vegetables and eggs." },
+    { you: "Did you catch the football match last night?", ai: "I didn't watch it live, but I heard it was an incredibly intense game!" },
+    { you: "I'm thinking of learning a new skill. Any ideas?", ai: "That's exciting! Web development or learning a new language are highly rewarding." },
+    { you: "It's starting to rain heavily out of nowhere!", ai: "Make sure to stay indoors and keep dry. Travel safely if you have to drive!" },
+    { you: "I just finished a really tough exam/project!", ai: "Congratulations! Hard work pays off. Now it's time to treat yourself." },
+    { you: "Do you prefer mornings or nights?", ai: "Mornings are great for energy, but nights are perfect for quiet focus." },
+    { you: "Thanks for the chat, I have to go now.", ai: "You're very welcome! Have a wonderful rest of your day!" },
+    {you : "Link about conversation" , ai : "https://youtu.be/CQKBaF1_h6M?si=BUWQDbCtFPFOUZec" , ai : "https://youtu.be/b9OVPcW1gfY?si=Wb-sOTe4ncHD4KWw"},
+];
 
 btn_M.addEventListener("click", (e) => {
     e.preventDefault(); 
 
     const userInputField = document.getElementById("userInput");
-    const userInput = userInputField.value.trim();
+    const userInput = userInputField.value.trim().toLowerCase();
+    const chat = document.getElementById("chat");
 
     if (userInput === "") return;
 
-    if (userInput.toLowerCase().includes("hello")) {
-        chat.innerHTML += `
+    
+    chat.innerHTML += `
         <div class="message user-msg">
-            <p><strong>You:</strong> ${userInput}</p>
+            <p><strong>You:</strong> ${userInputField.value}</p>
         </div>
-        <div class="message ai-msg">
-            <p><strong>AI:</strong> Yes hello brother</p>
-        </div>
-        `;
-    } else {
-        chat.innerHTML += `
-        <div class="message user-msg">
-            <p><strong>You:</strong> ${userInput}</p>
-        </div>
-        <div class="message ai-msg">
-            <p><strong>AI:</strong> What are you talking about?</p>
-        </div>
-        `;
+    `;
+
+
+    let bestMatch = null;
+    let highestScore = 0;
+
+
+    chat_ai.forEach(chatAI => {
+        const keyword = chatAI.you.toLowerCase();
+        let currentScore = 0;
+
+        
+        if (keyword.includes(userInput) || userInput.includes(keyword)) {
+            currentScore = 100;
+        } else {
+            
+            const chunkLength = Math.min(3, userInput.length); 
+            for (let i = 0; i <= userInput.length - chunkLength; i++) {
+                const chunk = userInput.substr(i, chunkLength);
+                if (keyword.includes(chunk)) {
+                    currentScore += 10;
+                }
+            }
+        }
+
+        if (currentScore > highestScore) {
+            highestScore = currentScore;
+            bestMatch = chatAI;
+        }
+    });
+
+    let aiResponse = "What are you talking about?";
+    if (bestMatch && highestScore >= 10) {
+        aiResponse = bestMatch.ai;
     }
 
+    chat.innerHTML += `
+        <div class="message ai-msg">
+            <p><strong>AI:</strong> ${aiResponse}</p>
+        </div>
+    `;
 
     userInputField.value = ""; 
-
-
     chat.scrollTop = chat.scrollHeight;
 });
 
