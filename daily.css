@@ -189,10 +189,143 @@ ul{
     margin: auto;
     gap: 10px;
 }
+
+.btn_menu{
+    position: sticky;
+    top: 10px;
+    left: 5%;
+    display: none;
+}
+.menu{
+    border: 1px solid none;
+    border-radius: 30px;
+    background-color: black;
+    width: 30px;
+    height: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.menu1{
+    border: 1px solid none;
+    border-radius: 30px;
+    background-color: blue;
+    width: 30px;
+    height: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.btn_b{
+    border: 1px solid rgb(0, 153, 255);
+    border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+}
 #open_chat{
     display: none;
 }
 .grid{
     display:grid;
     grid-template-columns: repeat(2 ,1fr);
+}
+.navbar{
+    position: fixed; 
+    top: 0px;
+    z-index: 10;
+}
+
+.nav_click_show{
+    border: 1px solid white;
+    border-radius: 20px;
+    height: auto;
+    position: fixed;
+    z-index: 20;
+    background-color: #5b4bc4;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav_click_show{
+    border: 1px solid white;
+    border-radius: 20px;
+    position: fixed;
+    background-color: #5b4bc4;
+    padding: 10px;
+    display: none;
+}
+
+
+@media (max-width: 600px){
+    .box_element1{
+        display: none;
+    }
+    .navbar{
+        width: 100%;
+    }
+    .btn-download{
+        width: 30%;
+        height: 100%;
+        margin:0;
+    }
+    .nav-links{
+        display:none;
+    }
+    .logo-text{
+        margin-right: 20px;
+    }
+    .btn_menu{
+        display: block;
+    }
+    .cards-container{
+        width: 100%;
+        margin-top: 900%;
+    }
+    .for_pictures{
+        display: none;
+    }
+    .description{
+        display: 100%;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(1 , 1fr);
+        font-size: 10px;
+    }
+    .box_element2{
+        width: 100%;
+    }
+    .text_description{
+        display: none;
+    }
+    .for_descitption{
+        display: none;
+    }
+    .for_picture{
+        width: 100%;
+    }
+    ._img{
+        width: 100%;
+    }
+    .img_general_conversation{
+        width: 100%;
+        height: 60%;
+    }
+    .conversation_place{
+        display: grid;
+        grid-template-columns: repeat(1 , 1fr);
+    }
+    .nav_click_show{
+        width: 80%;
+        margin-top: -250px;
+        margin-left: -35px;
+    }
+    .nav_click_show{
+        display: block;
+        margin-top: 10%;
+        margin-left: 2%;
+        display: none;
+    }
 }

@@ -255,3 +255,49 @@ body {
     cursor: pointer;
     background-color:gray;
 }
+.btn_menu{
+    position: fixed;
+    top: 13%;
+    left: 5%;
+    display: none;
+    z-index: 11;
+}
+.menu{
+    border: 1px solid none;
+    border-radius: 30px;
+    background-color: black;
+    width: 30px;
+    height: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.menu1{
+    border: 1px solid none;
+    border-radius: 30px;
+    background-color: blue;
+    width: 30px;
+    height: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.btn_b{
+    border: 1px solid rgb(0, 153, 255);
+    border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+}
+.nav_click{
+    border: 1px solid white;
+    border-radius: 20px;
+    height: auto;
+    position: fixed;
+    z-index: 12;
+    background-color: #5b4bc4;
+    padding: 10px;
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}

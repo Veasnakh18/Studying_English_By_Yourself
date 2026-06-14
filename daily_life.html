@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="daily.css">
-    <link rel="stylesheet" href="responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@100..900&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
 </head>
 <body>
 
-    <header style="position: fixed; top: 0px;z-index: 10;" class="navbar">
+    <header class="navbar">
         <div class="logo-container">
             <div class="logo-icon">📗</div>
             <div onclick="window.location.href='index.html'" class="logo-text">
@@ -40,7 +39,27 @@
             Create By Veasna
         </a>
     </header>
-
+    <div id="nav_show" class="nav_click_show">
+        <div>
+            <a style="text-decoration: none; color: white;" href="index.html">HOME</a>
+            <br><br>
+            <a style="text-decoration: none; color: white;" href="">ABOUT US</a>
+            <br><br>
+            <a style="text-decoration: none; color: white;" href="">Leasson</a>
+            <br><br>
+            <a style="text-decoration: none; color: white;" href="daily_life.html">DAILY LIFE</a>
+            <br><br>
+            <a style="text-decoration: none; color: white;" href="">CONTACT US</a>
+        </div>
+    </div>
+    
+    <div id="btn_open" class="btn_menu">
+        <button class="btn_b">
+            <div class="menu1"></div>
+            <div class="menu"></div>
+            <div class="menu1"></div>
+        </button>
+    </div>
     <section class="hero-section">
         <div class="hero-overlay"></div>
         
@@ -130,7 +149,7 @@
                                 
                             </div>
                             <!-- ----- -->
-                             <div id="click_open"  class="btn btn-danger d-flex justify-content-center align-content-center m-auto w-25 h-50 border rounded p-3">Chat with AI</div>
+                             <div id="click_open"  class="btn btn-danger d-flex justify-content-center align-content-center m-auto w-50 h-50 border rounded p-3">Chat with AI</div>
                         </div>
                         <!-- ----------------------Chat AI------------ -->
                          <div id="open_chat" style="width: 100%; height: auto; color: black;" class="border rounded-3 p-2 w-100 h-100  bg-primary">
@@ -185,6 +204,7 @@
         </div>
 
     </section>
+    
     <!-- ------------------------- -->
      <script src="script.js"></script>
 </body>

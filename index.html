@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
@@ -33,8 +34,26 @@
             Create By Veasna
         </a>
     </header>
-
+    
     <section class="hero-section">
+        <div class="btn_menu">
+            <button id="btn_open" class="btn_b">
+                <div class="menu1"></div>
+                <div class="menu"></div>
+                <div class="menu1"></div>
+            </button>
+        </div>
+        <nav id="nav_show" class="nav_click">
+        <a href="index.html" class="active"  >HOME</a>
+        <br><br>
+        <a href="#">ABOUT US</a>
+        <br><br>
+        <a href="#">Leasson <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+        <br><br>
+        <a href="daily_life.html">DAILY LIFE</a>
+        <br><br>
+        <a href="#">CONTACT US</a>
+    </nav>
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
@@ -51,7 +70,7 @@
         </div>
 
         <div class="cards-container">
-            <div onclick="window.location.href='daily_life.html'" class="card card-purple-dark">
+            <div onclick="window.location.href='daily_life.html'" class="card card-purple-dark w-50">
                 <div class="card-icon">
                     <img width="60" src="https://cdn-icons-png.flaticon.com/512/3588/3588723.png" alt="">
                 </div>
@@ -59,7 +78,7 @@
                 <p>Learn new words every day with our daily.</p>
             </div>
             
-            <div class="card card-white">
+            <div class="card card-white w-50">
                 <div class="card-icon">
                     <img width="60" src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-gradient-color-artificial-intelligence-robot-gear-brain-high-technology-intelligencerobotheadgearhigh-techgradienttechnologyfutureaiandroidlinesimplebrain-png-image_4039862.jpg" alt="">
                 </div>
@@ -67,7 +86,7 @@
                 <p>Gemini , Claude , chatGPT </p>
             </div>
             
-            <div onclick="window.location.href='../book_english/book.html'" class="card card-purple-light">
+            <div onclick="window.location.href='../book_english/book.html'" class="card card-purple-light w-50">
                 <div class="card-icon">
                     <i class="fa-solid fa-book-open"></i>
                 </div>
@@ -76,6 +95,6 @@
             </div>
         </div>
     </section>
-
+<script src="indexj.js"></script>
 </body>
 </html>

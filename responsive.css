@@ -6,3 +6,39 @@
         width: 100%;
     }
 }
+@media (max-width: 600px) {
+    .navbar{
+        width: 100%;
+
+    }
+    .nav-links{
+        display:none;
+    }
+    .logo-container{
+        margin-left: -20px;
+
+    }
+    .logo-icon{
+        margin:0;
+    }
+    .logo-text{
+        margin-right: 20px;
+    }
+    .btn_menu{
+        display: block;
+    }
+    .cards-container{
+        width: 100%;;
+        margin-top: 900%;
+    }
+    /* pag_2 Daily life */
+    .box_element1{
+        display: none;
+    }
+    .nav_click{
+        width: 80%;
+        margin-top: -250px;
+        margin-left: -35px;
+        display: none;
+    }
+}
