@@ -1,0 +1,35 @@
+.card_box{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 10px;
+}
+
+#navhead{
+    position: fixed;
+}
+#box1{
+    position: sticky;
+    top: 0px;
+}
+
+@media (max-width: 480px) {
+    .card_box{
+        display: grid;
+        grid-template-columns: repeat(1 , 1fr);
+        gap: 10px;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+.card_box{
+    display: grid;
+        grid-template-columns: repeat(1 , 1fr);
+        gap: 10px;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card_box{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        gap: 10px;
+    }
+}
