@@ -200,7 +200,17 @@ const chat_ai = [
     { you: "Do you prefer mornings or nights?", ai: "Mornings are great for energy, but nights are perfect for quiet focus." },
     { you: "Thanks for the chat, I have to go now.", ai: "You're very welcome! Have a wonderful rest of your day!" },
     {you : "Link about conversation" , ai : "https://youtu.be/CQKBaF1_h6M?si=BUWQDbCtFPFOUZec" , ai : "https://youtu.be/b9OVPcW1gfY?si=Wb-sOTe4ncHD4KWw"},
+    {you : "hello , you can pratice english whit me?" , ai : "Hello! I would love to practice English with you!"},
+    {you : "how are you ?" , ai : "I'm doing great, thank you for asking! My system is running smoothly, and I'm fully charged and ready to chat.How are you doing today? Did you have a busy day at the university, or are you just relaxing right now?"},
+    {you : "Thank you for asking me" , ai : "I'm glad to hear you're doing well."},
+    {you : "I'm am learning english now." , ai : "That is awesome! Learning a new language takes time, but you are doing a great job. Practicing like this every day is the best way to get better."},
+    {you : "love you" , ai : "yes , I love you too."},
+    
 ];
+
+const link_for_click = [
+    {you : "you can give link video youtube to me" , ai : "https://youtu.be/b9OVPcW1gfY?si=jaLJGprVbxR_pBY1"},
+]
 
 btn_M.addEventListener("click", (e) => {
     e.preventDefault(); 
@@ -224,6 +234,66 @@ btn_M.addEventListener("click", (e) => {
 
 
     chat_ai.forEach(chatAI => {
+        const keyword = chatAI.you.toLowerCase();
+        let currentScore = 0;
+
+        
+        if (keyword.includes(userInput) || userInput.includes(keyword)) {
+            currentScore = 100;
+        } else {
+            
+            const chunkLength = Math.min(3, userInput.length); 
+            for (let i = 0; i <= userInput.length - chunkLength; i++) {
+                const chunk = userInput.substr(i, chunkLength);
+                if (keyword.includes(chunk)) {
+                    currentScore += 10;
+                }
+            }
+        }
+
+        if (currentScore > highestScore) {
+            highestScore = currentScore;
+            bestMatch = chatAI;
+        }
+    });
+
+    let aiResponse = "What are you talking about?";
+    if (bestMatch && highestScore >= 10) {
+        aiResponse = bestMatch.ai;
+    }
+
+    chat.innerHTML += `
+        <div class="message ai-msg">
+            <p><strong>AI:</strong> ${aiResponse}</p>
+        </div>
+    `;
+
+    userInputField.value = ""; 
+    chat.scrollTop = chat.scrollHeight;
+});
+
+btn_M.addEventListener("click", (e) => {
+    e.preventDefault(); 
+
+    const userInputField = document.getElementById("userInput");
+    const userInput = userInputField.value.trim().toLowerCase();
+    const chat = document.getElementById("chat");
+
+    if (userInput === "") return;
+
+    
+    chat.innerHTML += `
+        <div class="message user-msg">
+            <p><strong>You:</strong> ${userInputField.value}</p>
+        </div>
+    `;
+
+
+    let bestMatch = null;
+    let highestScore = 0;
+
+
+    link_for_click.forEach(chatAI => {
         const keyword = chatAI.you.toLowerCase();
         let currentScore = 0;
 
