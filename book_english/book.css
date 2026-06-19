@@ -27,6 +27,12 @@
     #box_2{
         width: 100%;
     }
+    #btn-download{
+        display: none;
+    }
+    #box1{
+        display: none;
+    }
 }
 @media (min-width: 481px) and (max-width: 767px) {
 .card_box{

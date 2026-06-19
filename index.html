@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 
-    <header class="navbar">
+    <header id="header" class="navbar">
         <div class="logo-container">
             <div class="logo-icon">📗</div>
             <div class="logo-text">
@@ -22,7 +23,7 @@
             </div>
         </div>
         
-        <nav class="nav-links">
+        <nav id="header" class="nav-links">
             <a href="index.html" class="active"  >HOME</a>
             <a href="#">ABOUT US</a>
             <a href="#">Leasson <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
@@ -33,7 +34,15 @@
         <a href="#" class="btn-download">
             Create By Veasna
         </a>
+
     </header>
+    <div style="display:flex;gap:10%;padding:10px" class="d-flex justify-content-center align-items-center m-auto">
+        <p id="click_blue" class="border rounded-4 border-primary p-1 w-25 d-flex justify-content-center align-items-center m-auto">blue</p>
+        <p id="click_white" class="border rounded-4 border-none p-1 w-25 d-flex justify-content-center align-items-center m-auto">white</p>
+        <p id="click_red" class="border rounded-4 border-danger p-1 w-25 d-flex justify-content-center align-items-center m-auto">red</p>
+        <p id="click_yellow" class="border rounded-4 border-warning p-1 w-25 d-flex justify-content-center align-items-center m-auto">yellow</p>
+        <p id="click_none" class="border rounded-4 border-info p-1 w-25 d-flex justify-content-center align-items-center m-auto">none</p>
+    </div>
     
     <section class="hero-section">
         <div class="btn_menu">
@@ -70,7 +79,7 @@
         </div>
 
         <div class="cards-container">
-            <div onclick="window.location.href='daily_life.html'" class="card card-purple-dark w-50">
+            <div onclick="window.location.href='daily_life.html'" class="card card-purple-dark w-50 bg-primary">
                 <div class="card-icon">
                     <img width="60" src="https://cdn-icons-png.flaticon.com/512/3588/3588723.png" alt="">
                 </div>
@@ -86,7 +95,7 @@
                 <p>Gemini , Claude , chatGPT </p>
             </div>
             
-            <div onclick="window.location.href='../book_english/book.html'" class="card card-purple-light w-50">
+            <div onclick="window.location.href='../book_english/book.html'" class="card card-purple-light w-50 bg-danger text-light">
                 <div class="card-icon">
                     <i class="fa-solid fa-book-open"></i>
                 </div>

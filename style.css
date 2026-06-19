@@ -301,3 +301,40 @@ a{
     text-decoration: none;
     color: white;
 }
+#click_blue:hover{
+    background-color: #5c4bc4;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+    color:white;
+}
+#click_blue:hover .navbar{
+    color: white;
+}
+#click_white:hover{
+    background-color: gray;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+}
+#click_red:hover{
+    background-color: red;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+    color:white;
+}
+#click_yellow:hover{
+    background-color: yellow;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+}
+#click_none:hover{
+    background-color: rgb(60, 180, 255);
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+    
+}
+
