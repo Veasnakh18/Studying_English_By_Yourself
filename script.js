@@ -9,6 +9,20 @@ const close = document.getElementById("close");
 // show menu for phone
 const nav_show = document.getElementById("nav_show");
 const btn_open = document.getElementById("btn_open")
+const body = document.getElementById("body");
+const settig = document.getElementById("settig");
+const show_setting = document.getElementById("show_setting");
+const btn_close_setting = document.getElementById("btn_close_setting");
+
+// color 
+const black = document.getElementById("black");
+const blue = document.getElementById("blue");
+const white = document.getElementById("white");
+// set up font 
+
+const setUp = document.getElementById("setUp");
+const textsection = document.getElementById("textsection");
+
 
 
 
@@ -352,4 +366,77 @@ close.addEventListener("click" , ()=>{
 
         open_chat.style.display = "none";
 
+})
+
+// color background
+
+function background_black(){
+    body.style.backgroundColor = 'black';
+    body.style.color = 'white';
+}
+
+function background_(){
+    body.style.backgroundImage = 'linear-gradient(123deg , black 30% , rgb(2, 2, 77) 100%)';
+}
+
+function background_blue(){
+    body.style.backgroundColor = 'darkblue';
+    body.style.color = 'white';
+}
+
+function background_white(){
+    body.style.backgroundColor = '';
+    body.style.color = 'black';
+}
+
+// action
+// const list = document.getElementById("list");
+// list.innerHTML =`
+//     <div>
+
+//     </div>
+// `
+// code show
+
+// click color 
+black.addEventListener("click" , function(){
+    background_black();
+    black.style.background = 'red';
+    blue.style.background = 'none';
+    white.style.background = 'none';
+})
+
+blue.addEventListener("click" , function(){
+    background_blue();
+    black.style.background = 'none';
+    blue.style.background = 'red';
+    white.style.background = 'none';
+})
+white.addEventListener("click" , function(){
+    background_white();
+    black.style.background = 'none';
+    blue.style.background = 'none';
+    white.style.background = 'red';
+})
+
+settig.addEventListener("click" , ()=>{
+    show_setting.style.display = 'block';
+})
+btn_close_setting.addEventListener("click" , ()=>{
+    show_setting.style.display = 'none';
+})
+
+function set_font_size(){
+    const put_size = document.getElementById("put_size").value;
+    textsection.style.fontSize = `${put_size}px`;
+    if(put_size == "default"){
+        textsection.style.fontSize = `large`;
+        alert("Successfuly");
+    }else{
+        alert("You write the <<default>> word, it will go back to normal.")
+    }
+}
+
+setUp.addEventListener("click" , function(){
+    set_font_size();
 })

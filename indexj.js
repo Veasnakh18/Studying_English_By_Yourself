@@ -3,14 +3,14 @@ const btn_open = document.getElementById("btn_open")
 // click color 
 const click_blue = document.getElementById("click_blue");
 const header = document.getElementById("header");
+const body = document.getElementById("body");
 const click_white = document.getElementById("click_white")
 const click_red = document.getElementById("click_red")
 const click_yellow = document.getElementById("click_yellow")
 const click_none = document.getElementById("click_none")
 
 function color_blue(){
-    header.style.backgroundColor = 'blue';
-    header.style.color = 'white';
+    header.style.background = 'darkblue';
     click_blue.style.backgroundColor = 'blue';
     click_white.style.backgroundColor = '';
     click_red.style.backgroundColor = '';
@@ -53,6 +53,7 @@ function color_none(){
 
 click_blue.addEventListener("click" , function(){
     color_blue();
+    header.style.color = 'white';
 })
 click_white.addEventListener("click" , function(){
     color_white();

@@ -335,6 +335,8 @@ a{
     cursor: pointer;
     transform: scale(1.01);
     transition: all 0.3s ease-in-out;
-    
 }
 
+#header{
+    color: black;
+}

@@ -257,6 +257,14 @@ a{
     display: none;
 }
 
+.show_display{
+    display: none;
+    position: fixed;
+    z-index: 12;
+    width: 100%;
+    left: 70%;
+}
+
 
 @media (max-width: 600px){
     .box_element1{

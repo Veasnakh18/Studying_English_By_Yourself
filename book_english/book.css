@@ -12,6 +12,15 @@
     top: 0px;
 }
 
+.show_display{
+    display: none;
+    position: fixed;
+    z-index: 12;
+    width: 100%;
+    left: 70%;
+    top: 10%;
+}
+
 @media (max-width: 480px) {
     .card_box{
         display: grid;

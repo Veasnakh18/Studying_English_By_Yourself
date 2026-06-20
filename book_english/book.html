@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="../book_english/book.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body id="body">
     <header id="navhead" class="navbar">
         <div class="logo-container">
             <div class="logo-icon">📗</div>
@@ -31,13 +32,55 @@
             <a href="#">CONTACT US</a>
         </nav>
 
-        <a href="#" class="btn-download">
-            Create By Veasna
-        </a>
+         <div class="btn-download">
+            <p style="display: flex;justify-content: center;align-items: center;margin: auto;">Create By Veasna</p>
+            <i id="settig" style="display: flex;justify-content: center;align-items: center;cursor: pointer;" class="material-icons">&#xe8b8;</i>
+        </div>
     </header>
+    <!-- for settig -->
+    <div class="show_display" id="show_setting">
+        <div class="border rounded-3 border-danger bg-secondary w-25 h-auto p-3">
+            <h1 style="cursor: pointer;" class="d-flex justify-content-center align-items-center m-auto text-light">Change Color</h1>
+            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-primary  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
+                <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
+                    <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
+                    <div style="border: 1px solid blue;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-primary"></div>
+                </div>
+                <p id="blue" class="btn btn-info d-flex justify-content-center align-items-center m-auto">ON</p>
+            </div>
+            <!-- --------- -->
+            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-dark  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
+                <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
+                    <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
+                    <div style="border: 1px solid black;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-dark"></div>
+                </div>
+                <p id="black" class="btn btn-info d-flex justify-content-center align-items-center m-auto">ON</p>
+            </div>
+            
+            <!-- --------- -->
+            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-white  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
+                <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
+                    <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
+                    <div style="border: 1px solid white;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-light"></div>
+                </div>
+                <p id="white" class="btn btn-info d-flex justify-content-center align-items-center m-auto ">ON</p>
+            </div>
+            <h1 style="cursor: pointer;" class="d-flex justify-content-center align-items-center m-auto mt-3 text-light">Change font size</h1>
+            <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto mt-2">
+                <div style="gap: 2px;" class="d-flex justify-content-center align-items-center m-auto">
+                    <p class="d-flex justify-content-center align-items-center m-auto text-light">Set Font Size</p>
+                    <input id="put_size" class="w-25 d-flex justify-content-center align-items-center m-auto border rounded-3 p-1" type="text">
+                </div>
+                <p id="setUp" class="btn btn-primary d-flex justify-content-center align-items-center m-auto text-light ">Set up</p>
+            </div>
+            
+            
+            <div id="btn_close_setting" class="btn btn-danger mt-3">Close</div>
+        </div>
+    </div>
 <br>
     <!-- ----section -->
-     <section class="">
+     <section id="textsection" class="">
         <h1 class="d-flex justify-content-center">Book File</h1>
         <div id="box_2" class="row d-flex justify-content-center align-items-center g-1">
             <div id="box1" class="col-lg-6 w-25">
@@ -121,4 +164,3 @@
      <script src="../book_english/book.js"></script>
 </body>
 </html>
-<a href=""></a>
