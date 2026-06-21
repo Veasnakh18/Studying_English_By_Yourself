@@ -22,6 +22,10 @@ const white = document.getElementById("white");
 
 const setUp = document.getElementById("setUp");
 const textsection = document.getElementById("textsection");
+// quite answer
+const submit1 = document.getElementById("submit1");
+
+const result_score = document.getElementById("result_score");
 
 
 
@@ -439,4 +443,41 @@ function set_font_size(){
 
 setUp.addEventListener("click" , function(){
     set_font_size();
+})
+
+function answer(){
+    let a = document.getElementById("q1_a");
+    let b = document.getElementById("q1_b");
+    let c = document.getElementById("q1_c");
+    let d = document.getElementById("q1_d");
+    let q2 = document.getElementById("q2");
+// --------------
+    let q3_a = document.getElementById("q3_a");
+    let q3_b = document.getElementById("q3_b");
+    let q3_c = document.getElementById("q3_c");
+
+    let score = 0;
+
+
+    if(c.checked){
+        score+=2;
+    }
+    if(q2.value.trim().toLowerCase() == "to"){
+        score+=2;
+    }
+    if(q3_a.checked && q3_c.checked && !q3_b.checked){
+        score += 4;
+    }
+    console.log(score);
+    alert("Your Score : " + score);
+    result_score.innerHTML =`
+    <div class="border rounded-2 border-primary bg-success p-2">
+        <h2>Your Score For Exam : ${score}/8</h2>
+    </div>
+    `
+}
+submit1.addEventListener("click" , function(event){
+    event.preventDefault();
+
+    answer();
 })

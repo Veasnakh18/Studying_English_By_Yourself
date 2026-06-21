@@ -271,10 +271,10 @@ a{
         display: none;
     }
     .navbar{
-        width: 100%;
+        width: 98%;
     }
     .btn-download{
-        width: 30%;
+        width: 35%;
         height: 100%;
         margin:0;
     }
@@ -335,6 +335,11 @@ a{
         margin-top: 10%;
         margin-left: 2%;
         display: none;
+    }
+    .show_display{
+        position: fixed;
+        left: 10px;
+        width: 1500px;
     }
 }
 

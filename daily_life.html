@@ -45,7 +45,7 @@
     <div class="show_display" id="show_setting">
         <div class="border rounded-3 border-danger bg-secondary w-25 h-auto p-3">
             <h1 style="cursor: pointer;" class="d-flex justify-content-center align-items-center m-auto text-light">Change Color</h1>
-            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-primary  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
+            <div style="cursor: pointer; gap: 35%;" class="border rounded-3 border-primary  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
                 <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
                     <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
                     <div style="border: 1px solid blue;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-primary"></div>
@@ -53,7 +53,7 @@
                 <p id="blue" class="btn btn-info d-flex justify-content-center align-items-center m-auto">ON</p>
             </div>
             <!-- --------- -->
-            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-dark  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
+            <div style="cursor: pointer; gap: 35%;" class="border rounded-3 border-dark  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
                 <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
                     <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
                     <div style="border: 1px solid black;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-dark"></div>
@@ -62,7 +62,7 @@
             </div>
             
             <!-- --------- -->
-            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-white  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
+            <div style="cursor: pointer; gap: 35%;" class="border rounded-3 border-white  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
                 <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
                     <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
                     <div style="border: 1px solid white;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-light"></div>
@@ -257,7 +257,7 @@
                  </div>
                  <!-- ---------------------for testing and exam-------------------- -->
                  <div class="text-bg-primary">
-                    <div class="d-flex justify-content-center align-items-center mt-3">
+                    <div class="d-flex justify-content-center align-items-center mt-3 bg-warning">
                         <i style='font-size:24px' class='fas'>&#xf501;</i>
                         <h3>Testing and Exam</h3>
                     </div>
@@ -350,10 +350,13 @@
 
                     </div>
                 </div>
+                <div id="result_score">
 
+                </div>
+                <br>
                 <!-- Submit Button Block -->
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg shadow-sm" type="submit">Submit Answers</button>
+                    <button id="submit1" class="btn btn-danger btn-lg shadow-sm" type="submit">Submit Answers</button>
                 </div>
 
             </form>
@@ -487,7 +490,7 @@
       <div class="col-md-2 offset-md-1">
         <h6 class="text-uppercase fw-bold mb-3">Explore</h6>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a href="#" class="text-muted text-decoration-none sm-link">Home</a></li>
+          <li class="mb-2 border rounded border-secondary w-75"><a href="#" class="text-muted text-decoration-none sm-link">Home</a></li>
           <li class="mb-2"><a href="#" class="text-muted text-decoration-none sm-link">About Us</a></li>
           <li class="mb-2"><a href="#" class="text-muted text-decoration-none sm-link">Lessons</a></li>
           <li class="mb-2"><a href="#" class="text-muted text-decoration-none sm-link">Daily Life</a></li>

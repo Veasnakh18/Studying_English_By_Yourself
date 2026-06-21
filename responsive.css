@@ -41,4 +41,10 @@
         margin-left: -35px;
         display: none;
     }
+    #color_scrol{
+        scrollbar-width: auto;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        width: 100%;
+    }
 }
