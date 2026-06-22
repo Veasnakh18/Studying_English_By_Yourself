@@ -24,9 +24,18 @@ const setUp = document.getElementById("setUp");
 const textsection = document.getElementById("textsection");
 // quite answer
 const submit1 = document.getElementById("submit1");
+const Correct_answer = document.getElementById("Correct_answer");
 
 const result_score = document.getElementById("result_score");
+// const container = document.querySelector(".container");
+const Assistant_1 = document.getElementById("Assistant_1");
+const chat_Assistant = document.getElementById("chat_Assistant");
 
+// form chat assistant
+
+const btn_send = document.getElementById("btn_send");
+const btn_close_Assistant = document.getElementById("btn_close_Assistant");
+const show_it = document.getElementById("show_it");
 
 
 
@@ -377,6 +386,8 @@ close.addEventListener("click" , ()=>{
 function background_black(){
     body.style.backgroundColor = 'black';
     body.style.color = 'white';
+    // container.style.backgroundColor = 'black';
+    // container.style.color = 'white';
 }
 
 function background_(){
@@ -471,13 +482,115 @@ function answer(){
     console.log(score);
     alert("Your Score : " + score);
     result_score.innerHTML =`
+    
+    <div>
+    <div id="result_score">
     <div class="border rounded-2 border-primary bg-success p-2">
         <h2>Your Score For Exam : ${score}/8</h2>
     </div>
+                    </div>
+                    <div id="Correct_answer" class="border rounded-3 bg-dark w-100 h-auto">
+                        <h2 class="d-flex justify-content-center align-items-center m-auto">Correct answer</h2>
+                        <p class="m-3">1 . went</p>
+                        <p class="m-3">2 . to</p>
+                        <p class="m-3">3 . 1 . Shortened collective attention spans</p>
+                        <p class="m-3">3 . 2 . Reduced deep, reflective reading habits</p>
+
+                    </div>
+                </div>
+
+    
     `
+    Assistant_1.innerHTML = show_btn_ass;
 }
+
+// btn_close_Assistant.addEventListener("click" , ()=>{
+//     show_Assistant.style.display = 'none';
+// })
+// Assistant.addEventListener("click" , function(){
+//     click_open_Assistant();
+//     alert("hello")
+// })
+
+
+// function show_assistant(){
+//     const data_assistant = [
+//         {you : "" , assistant_ : ""},
+//     ]
+    
+//     btn_send.addEventListener("click" , (e)=>{
+//         e.preventDefault();
+//         const input_chat_Assistant = document.getElementById("input_chat_Assistant").value;
+//         data_assistant.forEach(chat_ai_ass =>{
+//             const AI_assi = document.createElement("div");
+//             if(input_chat_Assistant.toLowerCase().includes(chat_ai_ass.you)){
+//                 AI_assi.innerHTML =`
+//                 <p>You : ${input_chat_Assistant}</p>
+//                 <p>You : yes , Hi</p>
+//                 `
+//                 chat_Assistant.appendChild(AI_assi);
+//             }
+//         });
+//     });
+
+
+// }
+const assistant = `
+<div  class="border rounded border-primary bg-secondary">
+        <div class="border rounded-4 border-info bg-primary p-2">
+                <p class="you">hello</p>
+                <p class="Assistant">hi</p>
+        </div>
+    </div>
+    <div id="btn_close_Assistant" class="btn btn-danger">Close</div>
+`
+
+
+
+
+Assistant_1.addEventListener("click" , ()=>{
+    show_Assistant.style.display = 'block';
+})
+
+
 submit1.addEventListener("click" , function(event){
     event.preventDefault();
-
+    show_it.style.display = 'block';
     answer();
+})
+
+const data_assistant = [
+    {you : "hello" , assistant_ : "Yes , Hi 👋"},
+]
+
+btn_send.addEventListener("click" , (e)=>{
+    e.preventDefault();
+    const input_chat_Assistant = document.getElementById("input_chat_Assistant").value;
+    data_assistant.forEach(chat_ai_assi =>{
+        const make_chat = document.createElement("div");
+
+        if(input_chat_Assistant.trim().toLowerCase().includes(chat_ai_assi.you)){
+            make_chat.innerHTML = `
+            <p>You : ${input_chat_Assistant}</p>
+            <p>Assistant : ${chat_ai_assi.assistant_}</p>
+            `
+        }
+        else{
+            
+            make_chat.innerHTML =`
+            <p>You : ${input_chat_Assistant}</p>
+            <p>Assistant : what are talking about ?</p>
+            `
+        }
+        chat_Assistant.appendChild(make_chat);
+        
+    })
+    
+})
+
+// close assistant 
+btn_close_Assistant.addEventListener("click" , (event)=>{
+    event.preventDefault();
+
+    show_Assistant.style.display = 'none';
 })
