@@ -559,32 +559,163 @@ submit1.addEventListener("click" , function(event){
     answer();
 })
 
-const data_assistant = [
-    {you : "hello" , assistant_ : "Yes , Hi 👋"},
-]
+let explain_answer = `
+<div class="p-3 bg-white rounded shadow-sm border border-light text-black">
+    <h2 class="h5 text-primary mb-3">Section 1: Grammar & Vocabulary</h2>
+    <p class="mb-2"><strong>សំណួរទី ១:</strong> ចម្លើយត្រឹមត្រូវគឺ <b>"went"</b> ព្រោះនៅក្នុងប្រយោគមានពាក្យ "yesterday" (កាលពីម្សិលមិញ) ដែលបញ្ជាក់ពី Past Simple Tense។</p>
+    <p class="mb-0"><strong>សំណួរទី ២:</strong> ចម្លើយត្រឹមត្រូវគឺ <b>"to"</b> ព្រោះឃ្លា "look forward to" ត្រូវដើរទន្ទឹមគ្នាជានិច្ចដែលមានន័យថា ទន្ទឹងរង់ចាំ។</p>
+    <h3 class="h5 text-primary mb-3">1. She went to the library yesterday afternoon.</h3>
+    <ul>
+        <li>ពន្យល់៖ នៅក្នុងប្រយោគនេះមានពាក្យគន្លឹះគឺ "yesterday afternoon" (កាលពីម្សិលមិញ) ដែលជាពេលវេលាមួយជាក់លាក់ក្នុងអតីតកាល។ ដូច្នេះ យើងត្រូវប្រើទម្រង់កិរិយាសព្ទអតីតកាលធម្មតា (Past Simple)។ កិរិយាសព្ទដើមគឺ "go" ត្រូវប្តូរទៅជាទម្រង់អតីតកាលគឺ "went"។</li>
+        <li>goes ប្រើសម្រាប់បច្ចុប្បន្នកាល (Present Simple)</li>
+        <li>has gone ប្រើសម្រាប់បច្ចុប្បន្នកាលបរិបូណ៌ (Present Perfect)</li>
+        </ul>
+    <h3>2. Complete the sentence with the correct preposition: I am looking forward to seeing you at the conference next week.</h3>
+    <ul>
+        <li>ពន្យល់៖ នៅក្នុងភាសាអង់គ្លេស ឃ្លា "look forward to" គឺជាឃ្លាថេរ (Phrasal Verb) ដែលមានន័យថា "ទន្ទឹងរង់ចាំយ៉ាងអន្ទះសារ"។ បន្ទាប់ពីពាក្យ "to" នៅក្នុងឃ្លានេះ គឺត្រូវតែតាមដានដោយកិរិយាសព្ទថែម -ing (Gerund) ដែលក្នុងប្រយោគនេះគឺពាក្យ "seeing"។ ដូច្នេះ ធ្នាក់ (Preposition) ដែលត្រឹមត្រូវគឺ "to"។</li>
+    </ul>
+    <h1>Section 2: Reading Comprehension</h1>
+    <h3>3. According to the text, what are the negative impacts of the internet? (Select all that apply)</h3>
+    <p>ចម្លើយដែលត្រូវជ្រើសរើសគឺ៖</p>
+    <ul>
+        <li>Shortened collective attention spans (ធ្វើឱ្យរយៈពេលផ្ដោតអារម្មណ៍រួមខ្លីជាងមុន)</li>
+        <li>Reduced deep, reflective reading habits (កាត់បន្ថយទម្លាប់អានបែបស៊ីជម្រៅ និងការពិចារណា)</li>
+        <li>ពន្យល់៖ ប្រសិនបើយើងពិនិត្យមើលល្បះទីពីរនៅក្នុងអត្ថបទ៖ "some experts worry it has shortened our collective attention spans and reduced deep, reflective reading habits." (អ្នកជំនាញខ្លះបារម្ភថាវាបានធ្វើឱ្យរយៈពេលផ្ដោតអារម្មណ៍រួមរបស់យើងខ្លីជាងមុន និងកាត់បន្ថយទម្លាប់អានបែបស៊ីជម្រៅ និងការពិចារណា)។</li>
+        <li>ចំណែកឯជម្រើស "Increased cost of information sharing" (បង្កើនតម្លៃនៃការចែករំលែកព័ត៌មាន) គឺមិនត្រឹមត្រូវទេ ព្រោះនៅក្នុងអត្ថបទបាននិយាយថា អ៊ីនធឺណិតធ្វើឱ្យការចែករំលែកព័ត៌មានមានភាពរហ័សទាន់ចិត្ត (instantaneous) ហើយមិនបានលើកឡើងពីការឡើងថ្លៃនោះឡើយ។</li>
+    </ul>
+</div>
+`;
+let explain_answer_eg = `
+<div class="p-3 bg-white rounded shadow-sm border border-light text-black">
+    <h2 class="h5 text-primary mb-3">Section 1: Grammar & Vocabulary</h2>
+    <p class="mb-2"><strong>Question 1:</strong> The correct answer is <b>"went"</b> because the sentence contains the word "yesterday" (yesterday afternoon), which indicates the Past Simple Tense.</p>
+    <p class="mb-0"><strong>Question 2:</strong> The correct answer is <b>"to"</b> because the phrase "look forward to" always goes together, meaning to anticipate something with pleasure.</p>
+    <h3 class="h5 text-primary mb-3">1. She went to the library yesterday afternoon.</h3>
+    <ul>
+        <li>Explanation: In this sentence, the keyword is "yesterday afternoon", which refers to a specific time in the past. Therefore, we must use the Past Simple Tense. The base verb "go" must be changed to its past form, which is "went".</li>
+        <li>goes is used for the present habitual actions (Present Simple)</li>
+        <li>has gone is used for actions connected to the present (Present Perfect)</li>
+    </ul>
+    <h3>2. Complete the sentence with the correct preposition: I am looking forward to seeing you at the conference next week.</h3>
+    <ul>
+        <li>Explanation: In English, the phrase "look forward to" is a fixed phrasal verb meaning "to wait for something with excitement". After the word "to" in this specific idiom, it must be followed by a gerund (verb+ing), which in this sentence is "seeing". Therefore, the correct preposition is "to".</li>
+    </ul>
+    <h1>Section 2: Reading Comprehension</h1>
+    <h3>3. According to the text, what are the negative impacts of the internet? (Select all that apply)</h3>
+    <p>The correct choices to select are:</p>
+    <ul>
+        <li>Shortened collective attention spans</li>
+        <li>Reduced deep, reflective reading habits</li>
+        <li>Explanation: If we examine the second sentence in the text: "some experts worry it has shortened our collective attention spans and reduced deep, reflective reading habits." This directly confirms both options.</li>
+        <li>On the other hand, the option "Increased cost of information sharing" is incorrect because the text states that the internet has made sharing information nearly instantaneous, and it does not mention anything about increasing costs.</li>
+    </ul>
+</div>
+`;
 
+let explain_answer_kh = `
+<div class="p-3 bg-white rounded shadow-sm border border-light text-black">
+    <h2 class="h5 text-primary mb-3">Section 1: Grammar & Vocabulary</h2>
+    <p class="mb-2"><strong>សំណួរទី ១:</strong> ចម្លើយត្រឹមត្រូវគឺ <b>"went"</b> ព្រោះនៅក្នុងប្រយោគមានពាក្យ "yesterday" (កាលពីម្សិលមិញ) ដែលបញ្ជាក់ពី Past Simple Tense។</p>
+    <p class="mb-0"><strong>សំណួរទី ២:</strong> ចម្លើយត្រឹមត្រូវគឺ <b>"to"</b> ព្រោះឃ្លា "look forward to" ត្រូវដើរទន្ទឹមគ្នាជានិច្ចដែលមានន័យថា ទន្ទឹងរង់ចាំ។</p>
+    
+    <h3 class="h6 text-secondary mt-4 mb-2">1. She went to the library yesterday afternoon.</h3>
+    <ul>
+        <li>ពន្យល់៖ នៅក្នុងប្រយោគនេះមានពាក្យគន្លឹះគឺ "yesterday afternoon" (កាលពីម្សិលមិញ) ដែលជាពេលវេលាមួយជាក់លាក់ក្នុងអតីតកាល។ ដូច្នេះ យើងត្រូវប្រើទម្រង់កិរិយាសព្ទអតីតកាលធម្មតា (Past Simple)។ កិរិយាសព្ទដើមគឺ "go" ត្រូវប្តូរទៅជាទម្រង់អតីតកាលគឺ "went"។</li>
+        <li>goes ប្រើសម្រាប់បច្ចុប្បន្នកាល (Present Simple)</li>
+        <li>has gone ប្រើសម្រាប់បច្ចុប្បន្នកាលបរិបូណ៌ (Present Perfect)</li>
+    </ul>
+    
+    <h3 class="h6 text-secondary mt-4 mb-2">2. I am looking forward to seeing you at the conference next week.</h3>
+    <ul>
+        <li>ពន្យល់៖ នៅក្នុងភាសាអង់គ្លេស ឃ្លា "look forward to" គឺជាឃ្លាថេរ (Phrasal Verb) ដែលមានន័យថា "ទន្ទឹងរង់ចាំយ៉ាងអន្ទះសារ"។ បន្ទាប់ពីពាក្យ "to" នៅក្នុងឃ្លានេះ គឺត្រូវតែតាមដានដោយកិរិយាសព្ទថែម -ing (Gerund) ដែលក្នុងប្រយោគនេះគឺពាក្យ "seeing"។ ដូច្នេះ ធ្នាក់ (Preposition) ដែលត្រឹមត្រូវគឺ "to"។</li>
+    </ul>
+    
+    <h2 class="h5 text-primary mt-4 mb-3">Section 2: Reading Comprehension</h2>
+    <h3 class="h6 text-secondary mb-2">3. According to the text, what are the negative impacts of the internet?</h3>
+    <p>ចម្លើយដែលត្រូវជ្រើសរើសគឺ៖</p>
+    <ul>
+        <li>Shortened collective attention spans (ធ្វើឱ្យរយៈពេលផ្ដោតអារម្មណ៍រួមខ្លីជាងមុន)</li>
+        <li>Reduced deep, reflective reading habits (កាត់បន្ថយទម្លាប់អានបែបស៊ីជម្រៅ និងការពិចារណា)</li>
+        <li>ពន្យល់៖ ប្រសិនបើយើងពិនិត្យមើលល្បះទីពីរនៅក្នុងអត្ថបទ៖ "some experts worry it has shortened our collective attention spans and reduced deep, reflective reading habits." (អ្នកជំនាញខ្លះបារម្ភថាវាបានធ្វើឱ្យរយៈពេលផ្ដោតអារម្មណ៍រួមរបស់យើងខ្លីជាងមុន និងកាត់បន្ថយទម្លាប់អានបែបស៊ីជម្រៅ និងការពិចារណា)។</li>
+        <li>ចំណែកឯជម្រើស "Increased cost of information sharing" (បង្កើនតម្លៃនៃការចែករំលែកព័ត៌មាន) គឺមិនត្រឹមត្រូវទេ ព្រោះនៅក្នុងអត្ថបទបាននិយាយថា អ៊ីនធឺណិតធ្វើឱ្យការចែករំលែកព័ត៌មានមានភាពរហ័សទាន់ចិត្ត (instantaneous) ហើយមិនបានលើកឡើងពីការឡើងថ្លៃនោះឡើយ។</li>
+    </ul>
+</div>
+`;
+let explain_answer_en = `
+<div class="p-3 bg-white rounded shadow-sm border border-light text-black">
+    <h2 class="h5 text-primary mb-3">Section 1: Grammar & Vocabulary</h2>
+    <p class="mb-2"><strong>Question 1:</strong> The correct answer is <b>"went"</b> because the sentence contains the keyword "yesterday" (yesterday afternoon), which indicates the Past Simple Tense.</p>
+    <p class="mb-0"><strong>Question 2:</strong> The correct answer is <b>"to"</b> because the phrase "look forward to" is an idiom that always goes together, meaning to anticipate something with pleasure.</p>
+    
+    <h3 class="h6 text-secondary mt-4 mb-2">1. She went to the library yesterday afternoon.</h3>
+    <ul>
+        <li>Explanation: In this sentence, the keyword is "yesterday afternoon", which refers to a specific time in the past. Therefore, we must use the Past Simple Tense. The base verb "go" must be changed to its past form, which is "went".</li>
+        <li>goes is used for habitual actions in the present (Present Simple)</li>
+        <li>has gone is used for actions connected to the present (Present Perfect)</li>
+    </ul>
+    
+    <h3 class="h6 text-secondary mt-4 mb-2">2. I am looking forward to seeing you at the conference next week.</h3>
+    <ul>
+        <li>Explanation: In English, the phrase "look forward to" is a fixed phrasal verb meaning "to wait for something with excitement". After the word "to" in this specific idiom, it must be followed by a gerund (verb+ing), which in this sentence is "seeing". Therefore, the correct preposition is "to".</li>
+    </ul>
+    
+    <h2 class="h5 text-primary mt-4 mb-3">Section 2: Reading Comprehension</h2>
+    <h3 class="h6 text-secondary mb-2">3. According to the text, what are the negative impacts of the internet?</h3>
+    <p>The correct choices to select are:</p>
+    <ul>
+        <li>Shortened collective attention spans</li>
+        <li>Reduced deep, reflective reading habits</li>
+        <li>Explanation: If we examine the second sentence in the text: "some experts worry it has shortened our collective attention spans and reduced deep, reflective reading habits." This directly confirms both options.</li>
+        <li>On the other hand, the option "Increased cost of information sharing" is incorrect because the text states that the internet has made sharing information nearly instantaneous, and it does not mention anything about increasing costs.</li>
+    </ul>
+</div>
+`;
+const data_assistant = [
+    { you: "hello" ,  assistant_: "Yes, Hi 👋" },
+    { you: "hi" ,  assistant_: "Yes, Hi 👋" },
+    { you: "ពន្យល់ចម្លើយ", assistant_: explain_answer },
+    { you: "Translated into English", assistant_: explain_answer },
+    { you: "speak in english", assistant_: explain_answer_eg },
+    { you: "explain the answer", assistant_: explain_answer_eg },
+    { you: "speak in English", assistant_: explain_answer_eg },
+    { you: "ហេតុអ្វីបានជាត្រឹមត្រូវ", assistant_: explain_answer_kh },
+    { you: "why", assistant_: explain_answer_en },
+];
 btn_send.addEventListener("click" , (e)=>{
     e.preventDefault();
     const input_chat_Assistant = document.getElementById("input_chat_Assistant").value;
-    data_assistant.forEach(chat_ai_assi =>{
-        const make_chat = document.createElement("div");
+    if (input_chat_Assistant === "") return;
 
-        if(input_chat_Assistant.trim().toLowerCase().includes(chat_ai_assi.you)){
-            make_chat.innerHTML = `
-            <p>You : ${input_chat_Assistant}</p>
-            <p>Assistant : ${chat_ai_assi.assistant_}</p>
-            `
-        }
-        else{
-            
-            make_chat.innerHTML =`
-            <p>You : ${input_chat_Assistant}</p>
-            <p>Assistant : what are talking about ?</p>
-            `
-        }
-        chat_Assistant.appendChild(make_chat);
-        
-    })
+    const match_chat = data_assistant.find(chat_ai_assi => {
+        return input_chat_Assistant.includes(chat_ai_assi.you.toLowerCase());
+    });
+
+    const make_chat = document.createElement("div");
+    make_chat.className = "mb-3 p-2 ";
+
+    if (match_chat) {
+        make_chat.innerHTML = `
+        <div class="flex_user">
+            <img style="border:1px solid blue;border-radius:50%;width:30px;height:30px" class="border rounded-5 border-danger " src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="">
+            <p class="user"><strong>You :</strong> ${document.getElementById("input_chat_Assistant").value}</p>
+        </div>
+
+
+    <div class="flex">
+        <img style="border:1px solid blue;border-radius:50%;width:30px;height:30px" class="border rounded-5 border-danger " src="https://www.shutterstock.com/image-vector/chat-bot-icon-virtual-smart-600nw-2478937553.jpg" alt="">
+        <div><strong>Assistant :</strong> ${match_chat.assistant_}</div>
+    </div>
+        `;
+    } else {
+        make_chat.innerHTML = `
+            <p><strong>You :</strong> ${document.getElementById("input_chat_Assistant").value}</p>
+            <p><strong>Assistant :</strong> What are you talking about? 🤔</p>
+        `;
+    }
+
+    chat_Assistant.appendChild(make_chat);
+
+    document.getElementById("input_chat_Assistant").value = "";
     
 })
 
