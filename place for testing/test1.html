@@ -1,13 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <title>Home Page Video Background</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    /* កំណត់ទម្រង់ទូទៅ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Khmer OS Battambang', sans-serif;
+}
+
+/* កុងតឺន័រធំផ្ទុកវីដេអូ និងអក្សរ */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* ឱ្យកម្ពស់ពេញអេក្រង់ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* រៀបចំវីដេអូឱ្យនៅខាងក្រោយ និងពេញអេក្រង់ */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ធានាថាវីដេអូពេញអេក្រង់ដោយមិនខូចទ្រង់ទ្រាយ */
+    z-index: -2; /* ដាក់ឱ្យនៅខាងក្រោមគេបង្អស់ */
+}
+
+/* បន្ថែមស្រទាប់ខ្មៅស្រអាប់ពីលើវីដេអូ ដើម្បីកុំឱ្យចាំងភ្នែក និងងាយស្រួលមើលអក្សរ */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* ពណ៌ខ្មៅស្រអាប់ ៤០% */
+    z-index: -1;
+}
+
+/* រៀបចំអក្សរ និងប៊ូតុង */
+.hero-content {
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    position: absolute;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-explore {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-explore:hover {
+    background: #0056b3;
+}
+</style>
 <body>
-    
+
+    <!-- Hero Section -->
+    <header class="hero-container">
+        <!-- វីដេអូ Background -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="https://www.pexels.com/download/video/29331291/" type="video/mp4">
+            Browser របស់អ្នកមិនគាំទ្រវីដេអូនេះទេ។
+        </video>
+
+        <!-- ស្រទាប់ពណ៌ខ្មៅស្រអាប់ពីលើវីដេអូ (Overlay) ដើម្បីឱ្យមើលអក្សរច្បាស់ -->
+        <div class="video-overlay"></div>
+
+        <!-- ខ្លឹមសារ ឬ អក្សរនៅលើវីដេអូ -->
+        <div class="hero-content">
+            <h1>សូមស្វាគមន៍មកកាន់គេហទំព័ររបស់យើង</h1>
+            <p>បទពិសោធន៍ថ្មីជាមួយការរចនាបែបទំនើប និងទាក់ទាញ។</p>
+            <a href="#" class="btn-explore">ស្វែងយល់បន្ថែម</a>
+        </div>
+    </header>
+
 </body>
 </html>

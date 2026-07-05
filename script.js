@@ -234,6 +234,8 @@ const chat_ai = [
     {you : "Thank you for asking me" , ai : "I'm glad to hear you're doing well."},
     {you : "I'm am learning english now." , ai : "That is awesome! Learning a new language takes time, but you are doing a great job. Practicing like this every day is the best way to get better."},
     {you : "love you" , ai : "yes , I love you too."},
+    {you : "hello , you can practice English  with me." , ai : "Yes, I’d love to practice English with you."},
+    {you : "My name is Veasna, and I like to learn coding in my free time." , ai : "Great job, Veasna! 👏 You’re doing well. What is your name and what do you like to do in your free time?"},
     
 ];
 
@@ -725,3 +727,43 @@ btn_close_Assistant.addEventListener("click" , (event)=>{
 
     show_Assistant.style.display = 'none';
 })
+
+
+// --------------------------------------------------
+function checkPrepositions() {
+    let score = 0;
+
+    // ចាប់យកតម្លៃដែលសិស្សជ្រើសរើស (ទាញយកតាម ID)
+    let ans1 = document.getElementById("ex1").value;
+    let ans2 = document.getElementById("ex2").value;
+    let ans3 = document.getElementById("ex3").value;
+    let ans4 = document.getElementById("ex4").value;
+    let ans5 = document.getElementById("ex5").value;
+    let ans6 = document.getElementById("ex6").value;
+    let ans7 = document.getElementById("ex7").value;
+    let ans8 = document.getElementById("ex8").value;
+    let ans9 = document.getElementById("ex9").value;
+    let ans10 = document.getElementById("ex10").value;
+
+    // ផ្ទៀងផ្ទាត់ចម្លើយ (សំណួរនីមួយៗមានតម្លៃ ១ ពិន្ទុ)
+    if (ans1 === "on") score += 1;
+    if (ans2 === "above") score += 1;
+    if (ans3 === "under") score += 1;
+    if (ans4 === "inside") score += 1;
+    if (ans5 === "in") score += 1;
+    if (ans6 === "above") score += 1;
+    if (ans7 === "next to") score += 1;
+    if (ans8 === "between") score += 1;
+    if (ans9 === "next to") score += 1;
+    if (ans10 === "between") score += 1;
+
+    // បង្ហាញលទ្ធផលពិន្ទុសរុបជូនសិស្ស
+    alert("Your Score: " + score + " / 10");
+    console.log("Total Score: " + score);
+}
+
+// ភ្ជាប់ព្រឹត្តិការណ៍ Click ទៅលើប៊ូតុង Submit
+const submitBtn = document.getElementById("submitExercise");
+submitBtn.addEventListener("click", function() {
+    checkPrepositions();
+});

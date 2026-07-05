@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,46 +38,7 @@
         </div>
     </header>
     <!-- for settig -->
-    <div class="show_display" id="show_setting">
-        <div class="border rounded-3 border-danger bg-secondary w-25 h-auto p-3">
-            <h1 style="cursor: pointer;" class="d-flex justify-content-center align-items-center m-auto text-light">Change Color</h1>
-            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-primary  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
-                <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
-                    <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
-                    <div style="border: 1px solid blue;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-primary"></div>
-                </div>
-                <p id="blue" class="btn btn-info d-flex justify-content-center align-items-center m-auto">ON</p>
-            </div>
-            <!-- --------- -->
-            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-dark  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
-                <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
-                    <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
-                    <div style="border: 1px solid black;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-dark"></div>
-                </div>
-                <p id="black" class="btn btn-info d-flex justify-content-center align-items-center m-auto">ON</p>
-            </div>
-            
-            <!-- --------- -->
-            <div style="cursor: pointer; gap: 50%;" class="border rounded-3 border-white  w-100 h-auto mt-3 d-flex justify-content-center align-items-center m-auto  text-light">
-                <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto">
-                    <p class="d-flex justify-content-center align-items-center m-auto">Background blue </p>
-                    <div style="border: 1px solid white;width: 20px; height: 20px;" class="border rounded-1 d-flex justify-content-center align-items-center m-auto bg-light"></div>
-                </div>
-                <p id="white" class="btn btn-info d-flex justify-content-center align-items-center m-auto ">ON</p>
-            </div>
-            <h1 style="cursor: pointer;" class="d-flex justify-content-center align-items-center m-auto mt-3 text-light">Change font size</h1>
-            <div style="gap: 10px;" class="d-flex justify-content-center align-items-center m-auto mt-2">
-                <div style="gap: 2px;" class="d-flex justify-content-center align-items-center m-auto">
-                    <p class="d-flex justify-content-center align-items-center m-auto text-light">Set Font Size</p>
-                    <input id="put_size" class="w-25 d-flex justify-content-center align-items-center m-auto border rounded-3 p-1" type="text">
-                </div>
-                <p id="setUp" class="btn btn-primary d-flex justify-content-center align-items-center m-auto text-light ">Set up</p>
-            </div>
-            
-            
-            <div id="btn_close_setting" class="btn btn-danger mt-3">Close</div>
-        </div>
-    </div>
+    
 <br>
     <!-- ----section -->
      <section id="textsection" class="">
@@ -85,17 +46,20 @@
         <div id="box_2" class="row d-flex justify-content-center align-items-center g-1">
             <div id="box1" class="col-lg-6 w-25">
                 <div class="bg-dark text-light">
+                    
                     <div class="box_element1">
-                <h1 class="text_title">Container</h1>
-                <ul class="list">
-                    <li class="active1">With Friends <i id="icon" class="fa-solid fa-user-friends"></i></li>
-                    <li class="active1">With Teacher <i id="icon" class="fa-solid fa-chalkboard-teacher"></i></li>
-                    <li class="active1">General <i id="icon" class="fa-solid fa-globe"></i></li>
-                    <li class="active1">Chat Bot <i id="icon" class="fa-solid fa-globe"></i></li>
-                    <li class="active1">AI <i id="icon" class="fa-solid fa-globe"></i></li>
-                    <li class="active1">BOOK <i id="icon" class="fa-solid fa-globe"></i></li>
-                </ul>
-            </div>
+    <h1 class="text_title">Container</h1>
+    <ul class="list">
+        <li class="active1">With Friends <i class="menu-icon fa-solid fa-user-friends"></i></li>
+        <li class="active1">With Teacher <i class="menu-icon fa-solid fa-chalkboard-teacher"></i></li>
+        <li class="active1">General <i class="menu-icon fa-solid fa-globe"></i></li>
+        <li class="active1">Chat Bot <i class="menu-icon fa-solid fa-robot"></i></li> <!-- Swapped to 'robot' for chatbot -->
+        <li class="active1">AI <i class="menu-icon fa-solid fa-brain"></i></li> <!-- Swapped to 'brain' for AI -->
+        <li class="active1">BOOK <i class="menu-icon fa-solid fa-book"></i></li> <!-- Swapped to 'book' for BOOK -->
+    </ul>
+</div>
+
+
                 </div>
             </div>
             <!-- ---------------------------break div -->
@@ -160,6 +124,35 @@
     </div>
   </div>
 </footer>
+
+<div id="settings-panel" class="settings-panel">
+    <h2 class="settings-title"><i class="fa-solid fa-gear"></i> ការកំណត់ (Settings)</h2>
+    
+
+    <div class="setting-group">
+        <label class="setting-label">របៀបបង្ហាញ (Theme)</label>
+        <div class="theme-toggle">
+            <button class="theme-btn active" onclick="setTheme('dark')"><i class="fa-solid fa-moon"></i> ងងឹត</button>
+            <button class="theme-btn" onclick="setTheme('light')"><i class="fa-solid fa-sun"></i> ភ្លឺ</button>
+        </div>
+    </div>
+
+
+    <div class="setting-group">
+        <label class="setting-label">ពណ៌ចម្បង (Accent Color)</label>
+        <div class="color-options">
+            <span class="color-dot blue active" onclick="setAccent('#3b82f6')"></span>
+            <span class="color-dot green" onclick="setAccent('#10b981')"></span>
+            <span class="color-dot purple" onclick="setAccent('#8b5cf6')"></span>
+        </div>
+    </div>
+
+    <div class="setting-group">
+        <label class="setting-label">ទំហំអក្សរ (Font Size)</label>
+        <input type="range" min="14" max="22" value="16" class="font-slider" id="fontSizeSlider" oninput="changeFontSize(this.value)">
+        <span class="font-value" id="fontValue">16px</span>
+    </div>
+</div>
 
      <script src="../book_english/book.js"></script>
 </body>

@@ -5,15 +5,7 @@ const show_setting = document.getElementById("show_setting");
 const btn_close_setting = document.getElementById("btn_close_setting");
 
 // color 
-const black = document.getElementById("black");
-const blue = document.getElementById("blue");
-const white = document.getElementById("white");
-// set up font 
-
-const setUp = document.getElementById("setUp");
-const textsection = document.getElementById("textsection");
-const box_2 = document.getElementById("box_2");
-const box_2_2 = document.getElementById("box_2_2");
+const settings_show = document.getElementById("settings-panel");
 
 
 
@@ -24,6 +16,9 @@ const data_book = [
     {photo_book : "../book_english/img/book_what_on_Earth.jpg" , link : "../book_english/link_book/What on Earth! 09.2025.pdf"},
     {photo_book : "../book_english/img/book_time.jpg" , link : "../book_english/link_book/Time_for_Kids_Nonfiction_Comprehension_Test_Practice_Second_Edition.pdf"},
     {photo_book : "../book_english/img/sience copy.jpg" , link : "../book_english/link_book/science_dictionary_for_teachers_students_parents.pdf"},
+    {photo_book : "../book_english/img/photo_2026-06-26_02-53-14.jpg" , link : "../book_english/link_book/011-DYLAN-THE-DRAGON-Free-Childrens-Book-By-Monkey-Pen.pdf"},
+    {photo_book : "../book_english/img/photo_2026-06-26_02-56-47.jpg" , link : "../book_english/link_book/14_A_Child_Becomes_a_Reader_author_Bonnie_B_Armbruster_Fran_Lehr.pdf"},
+    {photo_book : "../book_english/img/photo_2026-06-26_03-00-23.jpg" , link : "../book_english/link_book/07_Learning_The_Alphabet_ABC_Workbook_2_author_Kathryn_J_Davis.pdf"},
 ]
 
 data_book.forEach(book_file =>{
@@ -45,77 +40,41 @@ data_book.forEach(book_file =>{
 
 // color background
 
-function background_black(){
-    box_2.style.background = 'black';
-    box_2_2.style.background = 'black';
-    body.style.color = 'white';
-    box_2.style.color = 'black';
-    box_2_2.style.color = 'white';
-}
+function setTheme(mode) {
+    const root = document.documentElement;
+    const buttons = document.querySelectorAll('.theme-btn');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
 
-function background_(){
-    body.style.backgroundImage = 'linear-gradient(123deg , black 30% , rgb(2, 2, 77) 100%)';
-}
-
-function background_blue(){
-    body.style.backgroundColor = 'darkblue';
-    body.style.color = 'white';
-    box_2.style.color = 'black';
-}
-
-function background_white(){
-    body.style.backgroundColor = '';
-    body.style.color = 'black';
-}
-
-// action
-// const list = document.getElementById("list");
-// list.innerHTML =`
-//     <div>
-
-//     </div>
-// `
-// code show
-
-// click color 
-black.addEventListener("click" , function(){
-    background_black();
-    black.style.background = 'red';
-    blue.style.background = 'none';
-    white.style.background = 'none';
-})
-
-blue.addEventListener("click" , function(){
-    background_blue();
-    black.style.background = 'none';
-    blue.style.background = 'red';
-    white.style.background = 'none';
-})
-white.addEventListener("click" , function(){
-    background_white();
-    black.style.background = 'none';
-    blue.style.background = 'none';
-    white.style.background = 'red';
-})
-
-settig.addEventListener("click" , ()=>{
-    show_setting.style.display = 'block';
-})
-btn_close_setting.addEventListener("click" , ()=>{
-    show_setting.style.display = 'none';
-})
-
-function set_font_size(){
-    const put_size = document.getElementById("put_size").value;
-    textsection.style.fontSize = `${put_size}px`;
-    if(put_size == "default"){
-        textsection.style.fontSize = `large`;
-        alert("Successfuly");
-    }else{
-        alert("You write the <<default>> word, it will go back to normal.")
+    if (mode === 'light') {
+        root.style.setProperty('--bg-panel', 'rgba(0, 0, 0, 0.04)');
+        root.style.setProperty('--text-main', '#1e293b');
+        root.style.setProperty('--text-muted', '#64748b');
+    } else {
+        root.style.setProperty('--bg-panel', 'rgba(255, 255, 255, 0.06)');
+        root.style.setProperty('--text-main', '#ffffff');
+        root.style.setProperty('--text-muted', '#94a3b8');
     }
 }
 
-setUp.addEventListener("click" , function(){
-    set_font_size();
-})
+function setAccent(color) {
+    document.documentElement.style.setProperty('--accent-color', color);
+    
+    document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+}
+
+function changeFontSize(size) {
+    document.getElementById('fontValue').innerText = size + 'px';
+    document.documentElement.style.setProperty('--base-font-size', size + 'px');
+    // អ្នកអាចយក variable --base-font-size ទៅប្រើក្នុង body { font-size: var(--base-font-size); }
+}
+
+    settig.addEventListener("click", () => {
+    if (settings_show.style.display == 'none') {    
+        settings_show.style.display = 'block';  // បិទវិញបើវាំពុងបើក
+    } else {
+        settings_show.style.display = 'none'; // បើកបង្ហាញ
+    }
+});

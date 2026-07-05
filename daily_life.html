@@ -104,23 +104,24 @@
             <div class="menu1"></div>
         </button>
     </div>
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
         
-        <div class="hero-content">
-            <p class="hero-tagline">Your Education, Your Way!</p>
-            <h1 class="hero-title">Learn new words every day with our daily.</h1>
-            <p class="hero-subtext">Get started with friends education</p>
-            <div class="hero-line"></div>
+        <div class="control_bg_video">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source style="width: 100%;height:100%" src="https://www.pexels.com/download/video/8655040/" type="video/mp4">
+            </video>
+            <div class="color_backgound"></div>
+            <div class="hero_text">
+                <div class="hero-content">
+                    <p class="hero-tagline">Your Education, Your Way!</p>
+                    <h1 class="hero-title">Learn new words every day with our daily.</h1>
+                    <p class="hero-subtext">Get started with friends education</p>
+                    <div class="hero-line"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="slider-dots">
-            <span class="dot"></span>
-            <span class="dot active"></span>
-            <span class="dot"></span>
-        </div>
+        <!--  -->
         
-    </section>
     <section id="textsection" class="daily-life-section">
         <div class="text_title">
             <div>
@@ -132,12 +133,12 @@
             <div class="box_element1">
                 <h1 class="text_title">Container</h1>
                 <ul class="list">
-                    <li class="active1">With Friends <i id="icon" class="fa-solid fa-user-friends"></i></li>
-                    <li class="active1">With Teacher <i id="icon" class="fa-solid fa-chalkboard-teacher"></i></li>
-                    <li class="active1">General <i id="icon" class="fa-solid fa-globe"></i></li>
-                    <li class="active1">Chat Bot <i id="icon" class="fa-solid fa-globe"></i></li>
-                    <li class="active1">AI <i id="icon" class="fa-solid fa-globe"></i></li>
-                    <li onclick="window.location.href='../book_english/book.html'" class="active1">BOOK <i id="icon" class="fa-solid fa-globe"></i></li>
+                    <li style="display: flex; justify-content:center;align-items:center ;gap: 10px;" class="active1"> <p class="text_display">With Friends</p> <i id="icon" class="fa-solid fa-user-friends"></i></li>
+                    <li style="display: flex; justify-content:center;align-items:center ;gap: 10px;" class="active1"> <p class="text_display">With Teacher</p> <i id="icon" class="fa-solid fa-chalkboard-teacher"></i></li>
+                    <li style="display: flex; justify-content:center;align-items:center ;gap: 10px;" class="active1"> <p class="text_display">General</p> <i id="icon" class="fa-solid fa-globe"></i></li>
+                    <li style="display: flex; justify-content:center;align-items:center ;gap: 10px;" class="active1"> <p class="text_display">Chat Bot</p> <i id="icon" class="fa-solid fa-globe"></i></li>
+                    <li style="display: flex; justify-content:center;align-items:center ;gap: 10px;" class="active1"> <p class="text_display">AI</p> <i id="icon" class="fa-solid fa-globe"></i></li>
+                    <li style="display: flex; justify-content:center;align-items:center ;gap: 10px;" onclick="window.location.href='../book_english/book.html'" class="active1"> <p class="text_display">BOOK</p> <i id="icon" class="fa-solid fa-globe"></i></li>
                 </ul>
             </div>
             <div class="box_element2">
@@ -489,7 +490,162 @@
                 </div>
 
             </form>
+            <body class="bg-light py-5">
+<!-- ------------ -->
+<div class="container">
+    <div class="row justify-content-center w-100">
+        <div class="col-md-8 w-100">
             
+            <div class="card shadow-sm border-0 mb-4 bg-primary text-white text-center p-4">
+                <h1 class="h3 mb-2">English Grammar: Prepositions</h1>
+                <p class="mb-0 text-white-50">Fill in the blanks using the correct preposition from the list.</p>
+            </div>
+            <img style="border-radius: 20px; width:100%" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSTq0E5-PuxzxRIAbzc5NvnTtlwj44RtcRZX2k6qpeGef7mljOx" alt="">
+            <br><br>
+            <form id="prepositionForm" novalidate>
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">1.</span>
+                            <span>The bear is sitting</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex1" required>
+                                <option value="">---</option>
+                                <option value="on">ON</option>
+                                <option value="under">UNDER</option>
+                                <option value="behind">BEHIND</option>
+                            </select>
+                            <span>the table.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">2.</span>
+                            <span>The sun is shining</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex2" required>
+                                <option value="">---</option>
+                                <option value="above">ABOVE</option>
+                                <option value="under">UNDER</option>
+                                <option value="in">IN</option>
+                            </select>
+                            <span>the palm tree.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">3.</span>
+                            <span>The rocking horse is</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex3" required>
+                                <option value="">---</option>
+                                <option value="on">ON</option>
+                                <option value="under">UNDER</option>
+                                <option value="inside">INSIDE</option>
+                            </select>
+                            <span>the table.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">4.</span>
+                            <span>The cat is</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex4" required>
+                                <option value="">---</option>
+                                <option value="in">IN</option>
+                                <option value="inside">INSIDE</option>
+                                <option value="on">ON</option>
+                            </select>
+                            <span>the treasure chest.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">5.</span>
+                            <span>The flowers are</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex5" required>
+                                <option value="">---</option>
+                                <option value="in">IN</option>
+                                <option value="inside">INSIDE</option>
+                                <option value="on">ON</option>
+                            </select>
+                            <span>the vase.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">6.</span>
+                            <span>The bee is buzzing</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex6" required>
+                                <option value="">---</option>
+                                <option value="above">ABOVE</option>
+                                <option value="next to">NEXT TO</option>
+                                <option value="behind">BEHIND</option>
+                            </select>
+                            <span>the flowers.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">7.</span>
+                            <span>The table is</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex7" required>
+                                <option value="">---</option>
+                                <option value="next to">NEXT TO</option>
+                                <option value="behind">BEHIND</option>
+                                <option value="above">ABOVE</option>
+                            </select>
+                            <span>the vase.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">8.</span>
+                            <span>The bush is</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex8" required>
+                                <option value="">---</option>
+                                <option value="between">BETWEEN</option>
+                                <option value="inside">INSIDE</option>
+                                <option value="under">UNDER</option>
+                            </select>
+                            <span>the stool and the flowers.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-3 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">9.</span>
+                            <span>The stool is</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex9" required>
+                                <option value="">---</option>
+                                <option value="next to">NEXT TO</option>
+                                <option value="behind">BEHIND</option>
+                                <option value="above">ABOVE</option>
+                            </select>
+                            <span>the bear.</span>
+                        </div>
+                        <hr class="opacity-25">
+
+                        <div class="mb-2 d-flex align-items-center flex-wrap gap-2">
+                            <span class="fw-bold">10.</span>
+                            <span>The palm tree stands</span>
+                            <select class="form-select d-inline-block w-auto text-center" id="ex10" required>
+                                <option value="">---</option>
+                                <option value="between">BETWEEN</option>
+                                <option value="behind">BEHIND</option>
+                                <option value="next to">NEXT TO</option>
+                            </select>
+                            <span>the treasure chest and the table.</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-danger btn-lg shadow-sm" id="submitExercise" type="button">Submit Answers</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>
