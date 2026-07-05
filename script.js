@@ -767,3 +767,46 @@ const submitBtn = document.getElementById("submitExercise");
 submitBtn.addEventListener("click", function() {
     checkPrepositions();
 });
+// add new word
+
+const btn_add_word = document.getElementById("btn_add_word");
+btn_add_word.addEventListener("click" , New_word)
+
+function New_word(event){
+    event.preventDefault();
+    const add_word = document.getElementById("add_woird");
+    const display_word = document.querySelector(".display_word");
+    input = add_word.value;
+    if(input === "") return;
+
+    const ADD_WORD = document.createElement("div");
+    ADD_WORD.classList.add("flex_item");
+    ADD_WORD.innerHTML = ` 
+    <div class="flex_item">
+    <div>${input}</div>
+    <div class="btn_del"><i class="material-icons">&#xe872;</i></div>
+    </div>
+    `
+    add_word.value = "";
+    
+    display_word.appendChild(ADD_WORD);
+
+    save_in_localstorage();
+}
+show_word_from_local();
+// localStorage.clear();
+// save item
+function save_in_localstorage(){
+    const display_word = document.querySelector(".display_word");
+    localStorage.setItem("key" , display_word.innerHTML);
+}
+// display item
+function show_word_from_local(){
+    const display_word = document.querySelector(".display_word");
+    const NewWord = localStorage.getItem("key");
+    if(NewWord){
+        display_word.innerHTML = NewWord;
+    }
+}
+
+// btn delete
