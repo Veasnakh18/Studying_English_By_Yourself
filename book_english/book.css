@@ -1,6 +1,6 @@
 .card_box{
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(4 , 1fr);
     gap: 10px;
 }
 
@@ -21,6 +21,12 @@
     top: 10%;
 }
 
+
+.btn:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px 3px rgb(32, 173, 255);
+}
 @media (max-width: 480px) {
     .card_box{
         display: grid;
@@ -247,4 +253,24 @@
     width: 50%;
     height: 60%;
     display: none;
+}
+#box_result1{
+    position: fixed;
+    top:23%;
+    left: 25%;
+    z-index: 5;
+    height: 700px;
+    background-color:#94a3b8b9;
+    display: none;
+    scroll-behavior: smooth;
+    overflow: auto;
+    
+}
+#box_result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
 }

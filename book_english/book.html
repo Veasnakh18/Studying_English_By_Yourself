@@ -15,7 +15,7 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body id="body">
-    <header id="navhead" class="navbar">
+    <header style="z-index: 3;" id="navhead" class="navbar">
         <div class="logo-container">
             <div class="logo-icon">📗</div>
             <div class="logo-text">
@@ -68,6 +68,14 @@
                     <div class="">
                         <h1 class="d-flex justify-content-center">Read Book and download</h1>
                     </div>
+                    <!-- ---------------------------------------------------------form for input -------------------------- -->
+                    <div class="mt-3">
+                        <form id="form" style="gap:10px" class="w-100 d-flex justify-content-center align-items-center m-auto">
+                            <input id="search" class="form-control w-50" type="text" placeholder="Search the Book ...">
+                            <button id="btn_search" type="submit" class="btn btn-info">Search</button>
+                        </form>
+                    </div>
+                    <br>
                     <div id="box_2">
                              <div id="show_book" class="card_box">
 
@@ -154,6 +162,11 @@
     </div>
 </div>
 
+
+<div id="box_result1" class="border border-warning w-75">
+    <div id="box_result"></div>
+    <button id="btn_close" class="btn btn-danger" type="button">Close</button>
+</div>
      <script src="../book_english/book.js"></script>
 </body>
 </html>
